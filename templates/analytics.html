@@ -1,0 +1,127 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Financial Analytics</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+    <header>
+        <h1>Financial Analytics</h1>
+        <p>Understand your spending with data analysis</p>
+    </header>
+
+    <main>
+
+        <section class="summary">
+
+            <div class="card">
+                <h3>Total Income</h3>
+                <p>₹{{ total_income }}</p>
+            </div>
+
+            <div class="card">
+                <h3>Total Expenses</h3>
+                <p>₹{{ total_expenses }}</p>
+            </div>
+
+            <div class="card">
+                <h3>Balance</h3>
+                <p>₹{{ balance }}</p>
+            </div>
+
+        </section>
+
+        <section class="actions">
+
+            <h2>Spending Insights</h2>
+
+            <p>
+                <strong>Highest Spending Category:</strong>
+                {{ highest_category }}
+            </p>
+
+            <p>
+                <strong>Amount in This Category:</strong>
+                ₹{{ highest_amount }}
+            </p>
+
+            <p>
+                <strong>Average Expense:</strong>
+                ₹{{ average_expense }}
+            </p>
+
+        </section>
+
+<!-- Category-wise Expense Chart -->
+
+<section class="chart-section">
+    <h2>Category-wise Expenses</h2>
+
+    <img
+        src="{{ url_for('static', filename='category_expenses.png') }}"
+        alt="Category-wise Expense Chart"
+        class="analytics-chart"
+    >
+</section>
+
+<!-- Monthly Expense Trend Chart -->
+
+<section class="chart-section">
+    <h2>Monthly Expense Trend</h2>
+
+    <img
+        src="{{ url_for('static', filename='monthly_expenses.png') }}"
+        alt="Monthly Expense Trend Chart"
+        class="analytics-chart"
+    >
+</section>
+
+
+        <section class="actions">
+
+            <h2>Monthly Expenses</h2>
+
+            {% if monthly_expenses %}
+
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Month</th>
+                            <th>Total Expenses</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                        {% for month, amount in monthly_expenses.items() %}
+                        <tr>
+                            <td>{{ month }}</td>
+                            <td>₹{{ amount }}</td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+
+            {% else %}
+
+                <p>No expense data available.</p>
+
+            {% endif %}
+
+        </section>
+
+        <div class="navigation">
+            <a href="/"><button>Dashboard</button></a>
+            <a href="/transactions"><button>Transactions</button></a>
+        </div>
+
+    </main>
+
+</body>
+</html>

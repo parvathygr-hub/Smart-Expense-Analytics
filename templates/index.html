@@ -1,0 +1,69 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Smart Expense Analytics</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+    <header>
+        <h1>Smart Expense Analytics</h1>
+        <p>Manage and understand your spending</p>
+    </header>
+
+    <main>
+
+        <!-- Financial Summary -->
+
+        <section class="summary">
+
+            <div class="card">
+                <h3>Total Income</h3>
+                <p>₹{{ total_income }}</p>
+            </div>
+
+            <div class="card">
+                <h3>Total Expenses</h3>
+                <p>₹{{ total_expenses }}</p>
+            </div>
+
+            <div class="card">
+                <h3>Balance</h3>
+                <p>₹{{ balance }}</p>
+            </div>
+
+        </section>
+
+
+        <!-- Quick Actions -->
+
+        <section class="actions">
+
+            <h2>Quick Actions</h2>
+
+            <a href="/add-transaction">
+                <button type="button">Add Transaction</button>
+            </a>
+
+            <a href="/transactions">
+                <button type="button">View Transactions</button>
+            </a>
+
+            <a href="/analytics">
+                <button type="button">Financial Analytics</button>
+            </a>
+
+        </section>
+
+    </main>
+
+</body>
+
+</html>
