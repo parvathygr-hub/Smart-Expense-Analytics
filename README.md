@@ -114,17 +114,21 @@ Pandas is used to calculate financial summaries, category-wise spending, monthly
 
 
 
+
+
 ## Screenshots
 
 ### Dashboard
 ![Dashboard](screenshots/dashboard.png)
 
-### Transactions
-![Transactions](screenshots/transactions.png)
+### Add Transaction
+![Add Transaction](screenshots/add%20transactions.png)
+
+### View Transactions
+![View Transactions](screenshots/view%20transactions.png)
 
 ### Analytics
 ![Analytics](screenshots/analytics.png)
-
 ## Future Improvements
 
 - Date-range filters for financial reports
