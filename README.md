@@ -112,9 +112,18 @@ Open `http://127.0.0.1:5000` in your browser.
 
 Pandas is used to calculate financial summaries, category-wise spending, monthly expense totals, and spending insights. Matplotlib generates charts that help users understand their financial data.
 
+
+
 ## Screenshots
 
-Add screenshots of the dashboard, transaction list, and financial analytics page here.
+### Dashboard
+![Dashboard](screenshots/dashboard.png)
+
+### Transactions
+![Transactions](screenshots/transactions.png)
+
+### Analytics
+![Analytics](screenshots/analytics.png)
 
 ## Future Improvements
 
